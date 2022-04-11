@@ -1,0 +1,18 @@
+ function salaa(){
+  var salattava = document.getElementById("salattava").innerHTML = "";
+  var obj = {"salattava":salattava};
+	$.ajax({ url: 'salaus.php',
+         data: {input: obj},
+         type: 'post',
+         success: function(output) {
+            //alert(viesti);
+            }
+	});
+	
+	$.ajax({ url: 'salaus.php',
+		type: 'post',
+        success: function(output){
+            document.getElementById("salattu").innerHTML=(output);
+            }
+	});
+}
